@@ -5,3 +5,5 @@ config/gh/hosts.yml
 # fish
 config/fish/fish_variables
 config/fish/generated_completions
+.DS_Store
+/.idea
