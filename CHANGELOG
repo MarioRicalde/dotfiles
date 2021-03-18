@@ -1,5 +1,15 @@
 CHANGELOG
+## Changelog
 
-Version 0.0.1 (2020-03-14)
 
-- Initial version.
+* Version 0.0.2 (2020-03-18)
+  - Setup the repository.
+  - Installed Alacritty.
+  - Installed Tmux.
+  - Installed Fish.
+  - Dotbot added to the repository.
+  - Installed `mas` for handling App Store installations.
+  - Installed several homebrew casks.
+
+* Version 0.0.1 (2020-03-14)
+  - Initial version.
