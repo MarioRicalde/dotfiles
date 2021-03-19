@@ -2,6 +2,9 @@
 config/gh/state.yml
 config/gh/hosts.yml
 
+# Neovim
+config/nvim/shada
+
 # fish
 config/fish/fish_variables
 config/fish/generated_completions
