@@ -1,6 +1,11 @@
-CHANGELOG
+ANGELOG
 ## Changelog
 
+* Version 0.0.3 (2020-03-19)
+  - fzf fixes with fish.
+  - Installed Tuple.
+  - Installed tree
+  - Changed editor from nano to vim
 
 * Version 0.0.2 (2020-03-18)
   - Setup the repository.
