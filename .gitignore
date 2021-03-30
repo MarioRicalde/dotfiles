@@ -10,3 +10,6 @@ config/fish/fish_variables
 config/fish/generated_completions
 .DS_Store
 /.idea
+
+# asdf manager
+config/asdf/tmp/*

@@ -3,3 +3,4 @@
         relink: true
 - link:
     ~/.config: config
+    ~/.asdfrc: config/asdf/asdfrc
