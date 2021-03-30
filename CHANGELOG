@@ -1,6 +1,11 @@
 ANGELOG
 ## Changelog
 
+
+* Version 0.0.4 (2020-03-29)
+  - Installed `z`
+  - Installed `tide` for Fish prompt ( use `tide` to configure it )
+
 * Version 0.0.3 (2020-03-19)
   - fzf fixes with fish.
   - Installed Tuple.
