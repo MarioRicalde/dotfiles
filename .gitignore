@@ -10,8 +10,6 @@ config/fish/fish_variables
 config/fish/fish_history
 config/fish/generated_completions
 config/z/data
-.DS_Store
-/.idea
 
 # asdf manager
 config/asdf/tmp/*
@@ -19,3 +17,8 @@ config/asdf/tmp/*
 # gatsby
 config/gatsby/*
 config/configstore/*
+
+# Other
+*.tar.gz
+.DS_Store
+/.idea
