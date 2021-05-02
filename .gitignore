@@ -6,7 +6,6 @@ config/gh/hosts.yml
 config/nvim/shada
 
 # fish
-config/fish/fish_variables
 config/fish/fish_history
 config/fish/generated_completions
 config/z/data
