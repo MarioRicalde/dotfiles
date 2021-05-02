@@ -4,3 +4,8 @@
 - link:
     ~/.config: config
     ~/.asdfrc: config/asdf/asdfrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - brew --version; if [ $status = 127 ]; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" end;
+  - brew --version; if [ $status = 0 ]; brew bundle install --file=Brewfile-required; end;
