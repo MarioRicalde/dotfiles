@@ -2,6 +2,10 @@ ANGELOG
 ## Changelog
 
 
+* Version 0.0.5 (2020-05-02)
+  - Installed `starship` for Fish prompt.
+  - Removed `tide`
+
 * Version 0.0.4 (2020-03-29)
   - Installed `z`
   - Installed `tide` for Fish prompt ( use `tide` to configure it )
