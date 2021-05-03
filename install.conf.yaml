@@ -7,5 +7,20 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - brew --version; if [ $status = 127 ]; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" end;
-  - brew --version; if [ $status = 0 ]; brew bundle install --file=Brewfile-required; end;
+  -
+    description: "Test if homebrew is installed: "
+    command: source ~/.zprofile; if [ -z "$HOMEBREW_PREFIX" ]; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi;
+    stdin: true; # required.
+    stdout: true;
+    stderr: true;
+  - touch ~/.zprofile
+  -
+   description: "Set Homebrew install path:  "
+   command: if [ `uname -m` = "x86_64" ]; then echo 'eval "$(/usr/local/bin/brew shellenv)"' > ~/.zprofile; else echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' > ~/.zprofile; fi;
+  -
+    description: "Installing required packages... "
+    command: source ~/.zprofile; if [ ! -z "$HOMEBREW_PREFIX" ]; then brew bundle install --file=Brewfile-required; fi;
+    stdout: true; # watch progress.
+    stderr: true; # watch progress.
+  - [source ~/.zprofile; ln -s $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.fish ./config/fish/functions/fzf_key_bindings.fish]
+  - [source ~/.zprofile; sed -e 's|homebrew|'$HOMEBREW_PREFIX'|g' config/alacritty/alacritty.stud.yml > config/alacritty/alacritty.yml]

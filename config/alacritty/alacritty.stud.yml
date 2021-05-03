@@ -514,12 +514,11 @@ live_config_reload: true
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
 shell:
-  #program: /usr/local/homebrew/bin/fish
-  program: /usr/local/bin/fish
+  program: homebrew/bin/fish
   args:
     - -c
-    - /usr/local/bin/tmux attach || /usr/local/bin/tmux
-
+    - homebrew/bin/tmux attach || homebrew/bin/tmux
+ 
 debug:
   # Should display the render timer
   render_timer: false
