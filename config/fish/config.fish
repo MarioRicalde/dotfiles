@@ -2,10 +2,7 @@
 if test -d "/opt/homebrew"
     set -gx HOMEBREW_PREFIX "/opt/homebrew"
     set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-end
-
-# Load Homebrew (Intel)
-if test -d "/usr/local/bin"
+else  # Load Homebrew (Intel)
     set -gx HOMEBREW_PREFIX "/usr/local"
     set -U fish_user_paths /usr/local/bin $fish_user_paths
 end

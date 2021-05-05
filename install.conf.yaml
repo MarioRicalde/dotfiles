@@ -23,4 +23,5 @@
     stdout: true; # watch progress.
     stderr: true; # watch progress.
   - [source ~/.zprofile; ln -s $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.fish ./config/fish/functions/fzf_key_bindings.fish]
-  - [source ~/.zprofile; sed -e 's|homebrew|'$HOMEBREW_PREFIX'|g' config/alacritty/alacritty.stud.yml > config/alacritty/alacritty.yml]
+  - if [ `uname -m` = "x86_64" ]; then cat config/alacritty/alacritty.yml | sed -E "s;/opt/homebrew;/usr/local;g" | tee config/alacritty/alacritty.yml; fi
+  - if [ `uname -m` = "arm64" ]; then cat config/alacritty/alacritty.yml | sed -E "s;/usr/local;/opt/homebrew;g" | tee config/alacritty/alacritty.yml; fi

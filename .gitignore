@@ -21,7 +21,4 @@ config/configstore/*
 *.tar.gz
 .DS_Store
 /.idea
-alacritty.yml
 /config/fish/functions/fzf_key_bindings.fish
-/config/alacritty/alacritty.yml
-/config/valet
