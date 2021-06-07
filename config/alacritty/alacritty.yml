@@ -427,7 +427,7 @@ key_bindings:
   - { key: Insert,                        chars: "\x1b[2~"                     }
   - { key: Delete,                        chars: "\x1b[3~"                     }
 
-    # shortcuts for tmux. the leader key is control-b (0x02)
+  # shortcuts for tmux. the leader key is control-b (0x02)
   - { key: W,        mods: Command,       chars: "\x02&"                       }  # close tab (kill)
   - { key: T,        mods: Command,       chars: "\x02c"                       }  # new tab
   - { key: RBracket, mods: Command|Shift, chars: "\x02n"                       }  # select next tab
@@ -435,6 +435,12 @@ key_bindings:
   - { key: RBracket, mods: Command,       chars: "\x02o"                       }  # select next pane
   - { key: LBracket, mods: Command,       chars: "\x02;"                       }  # select last (previously used) pane
   - { key: F,        mods: Command,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
+
+  # tmux scroll
+  - { key: PageUp,   mods: Shift, action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt       }
+  - { key: Home,     mods: Shift, action: ScrollToTop,    mode: ~Alt       }
+  - { key: End,      mods: Shift, action: ScrollToBottom, mode: ~Alt       }
 
 mouse:
   # Click settings
@@ -448,8 +454,8 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
-  # URL launcher
-  # url:
+    # URL launcher
+    # url:
     # This program is executed when clicking on a text which is recognized as a URL.
     # The URL is always added to the command as the last parameter.
     #
@@ -463,9 +469,9 @@ mouse:
     #   program: xdg-open
     #   args: []
 
-    # These are the modifiers that need to be held down for opening URLs when clicking
-    # on them. The available modifiers are documented in the key binding section.
-    # modifiers: Control|Shift
+  # These are the modifiers that need to be held down for opening URLs when clicking
+  # on them. The available modifiers are documented in the key binding section.
+  # modifiers: Control|Shift
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -514,11 +520,10 @@ live_config_reload: true
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
 shell:
-  #program: /usr/local/homebrew/bin/fish
-  program: /usr/local/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - -c
-    - /usr/local/bin/tmux attach || /usr/local/bin/tmux
+    - /opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux
 
 debug:
   # Should display the render timer

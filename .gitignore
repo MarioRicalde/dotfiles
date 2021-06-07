@@ -21,3 +21,4 @@ config/configstore/*
 *.tar.gz
 .DS_Store
 /.idea
+/config/fish/functions/fzf_key_bindings.fish
