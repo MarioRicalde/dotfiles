@@ -1,3 +1,12 @@
+# Load Homebrew (Apple Silicon)
+if test -d "/opt/homebrew"
+    set -gx HOMEBREW_PREFIX "/opt/homebrew"
+    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+else  # Load Homebrew (Intel)
+    set -gx HOMEBREW_PREFIX "/usr/local"
+    set -U fish_user_paths /usr/local/bin $fish_user_paths
+end
+
 # Prompt
 starship init fish | source
 
@@ -15,24 +24,23 @@ export EDITOR="$VISUAL"
 
 # openldap
 # If you need to have openldap first in your PATH, run:
-set -g fish_user_paths "/usr/local/opt/openldap/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
+set -g fish_user_paths "$HOMEBREW_PREFIX/opt/openldap/bin" $fish_user_paths
+set -g fish_user_paths "$HOMEBREW_PREFIX/opt/openldap/sbin" $fish_user_paths
 
 # For compilers to find openldap you may need to set:
-set -gx LDFLAGS "-L/usr/local/opt/openldap/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/openldap/include"
-
+set -gx LDFLAGS "-L$HOMEBREW_PREFIX/opt/openldap/lib"
+set -gx CPPFLAGS "-I$HOMEBREW_PREFIX/opt/openldap/include"
 
 # Curl
 # If you need to have curl first in your PATH, run:
-set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+set -g fish_user_paths "$HOMEBREW_PREFIX/opt/curl/bin" $fish_user_paths
 
 # For compilers to find curl you may need to set:
-set -gx LDFLAGS "-L/usr/local/opt/curl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/curl/include"
+set -gx LDFLAGS "-L$HOMEBREW_PREFIX/opt/curl/lib"
+set -gx CPPFLAGS "-I$HOMEBREW_PREFIX/opt/curl/include"
 
 # For pkg-config to find curl you may need to set:
-set -gx PKG_CONFIG_PATH "/usr/local/opt/curl/lib/pkgconfig"
+set -gx PKG_CONFIG_PATH "$HOMEBREW_PREFIX/opt/curl/lib/pkgconfig"
 
 # asdf (version manager)
-source /usr/local/opt/asdf/asdf.fish
+source "$HOMEBREW_PREFIX/opt/asdf/asdf.fish"
